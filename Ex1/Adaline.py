@@ -28,5 +28,4 @@ class Adaline:
         e = t - y
         if(e != 0):
             self.w += ETA*e*x
-            return True
-        return False
+        return e

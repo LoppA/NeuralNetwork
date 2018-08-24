@@ -17,7 +17,6 @@ while(cnt != 0):
 
     for i in range(n):
         differ = per.train(and_input[i], and_output[i])
-        if(differ):
-            cnt += 1
+        cnt += differ*differ
 
 print('\n', per, sep='')
