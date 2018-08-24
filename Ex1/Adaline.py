@@ -21,11 +21,14 @@ class Adaline:
     def __str__(self):
         return ("Size: " + str(self.w.shape) + "\nW: " + str(self.w))
 
-    def train(self, x, t):
+    def run(self, x, t):
         y = np.sum(x * self.w)
+        return self.actv(y)
 
-        y = self.actv(y)
+    def train(self, x, t):
+        y = self.run(x, t)
         e = t - y
         if(e != 0):
             self.w += ETA*e*x
         return e
+
